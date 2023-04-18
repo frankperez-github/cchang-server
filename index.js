@@ -9,6 +9,7 @@ const server = jsonServer.create()
 // const router = jsonServer.router(isProductionEnv ? clone(data) : 'db.json', {
 //     _isFake: isProductionEnv
 // })
+const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
