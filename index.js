@@ -7,7 +7,7 @@ const server = jsonServer.create()
 
 // For mocking the POST request, POST request won't make any changes to the DB in production environment
 const router = jsonServer.router(isProductionEnv ? clone(data) : 'db.json', {
-    _isFake: !isProductionEnv
+    _isFake: isProductionEnv
 })
 // const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
