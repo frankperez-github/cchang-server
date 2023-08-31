@@ -1,12 +1,9 @@
 const express = require("express")
 const router = express.Router()
+const {getProjects, updateProject, createProject, deleteProject} = require("../controllers/projectsControllers")
 
 
-router.route("/").get((req, res)=>{
-    res.send("Get request sended")
-})
-router.route("/:id").put((req,res)=>{
-    res.send("Put request sended")
-})
+router.route("/").get(getProjects).post(createProject)
+router.route("/:id").put(updateProject).delete(deleteProject)
 
 module.exports = router;
