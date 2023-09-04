@@ -8,7 +8,7 @@ connectDB()
 const app = express()
 
 app.use(express.json())
-app.use(`/${process.env.SERVER}/projects`, require("./routes/projectsRoutes"))
+app.use(`/projects`, require("./routes/projectsRoutes"))
 
 app.listen(port, (req, res)=>{
     console.log("Server running on port:", port)
